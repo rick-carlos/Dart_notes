@@ -1,23 +1,15 @@
-name: diario
-description: "A new Flutter project."
-publish_to: 'none'
-
-version: 1.0.0+1
+name: dart_cli
+description: A sample command-line application.
+version: 1.0.0
+# repository: https://github.com/my_org/my_repo
 
 environment:
-  sdk: '>=3.5.0 <4.0.0' # Atualizado para uma versão moderna do SDK compatível com pacotes atuais
+  sdk: ^3.13.7
 
+# Add regular dependencies here.
 dependencies:
-  flutter:
-    sdk: flutter
-  http: ^1.2.0 # Cole bem abaixo do flutter semrpe todas as dependências.
-
-  cupertino_icons: ^1.0.8
+  path: ^1.9.0
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  flutter_lints: ^5.0.0 # Ajustado para uma versão padrão estável
-
-flutter:
-  uses-material-design: true
+  lints: ^6.0.0
+  test: ^1.25.6

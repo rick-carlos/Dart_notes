@@ -4,6 +4,9 @@
 
 // todo programa começa com void main
 
+import 'dart:math';
+
+
 void main(){
   print("hello world"); // o corpo é igual ao python, exceto pelo uso do ; igual ao C
   var name = "joão";
@@ -118,4 +121,47 @@ void main(){
 
   print(id is int); // Ambos serão true
   print(id is !int); // pra checar condicionais de diferença usando is se usa ! e não !=
+
+
+
+  //-----------------------------------------------------------
+
+  //Boa parte desse documento tem criado variaveis isoladas do mesmo tipo varias vezes, mas a
+  // melhor abordagem é fazer um map, o map é como se fosse uma lista mas ela opera por chaves
+  //Você associa um valor a otro usando :, assim você consegue guardar muitos valores dentro dele.
+  //Essa lógica de um valor significar outro faz o map ser conhecido como dicionário.
+
+  //Portanto ao invés de fazer igual nas linhas 18 a 28 onde tem várias tipos iguais, faça assim.
+
+  Map <String, int> numerosGrupo = {
+    'numero1' : 10,
+    'numero2' : 30,
+    'numero3' : 50,
+    'numero4' : 100
+  };
+
+  //agora você pode fazer operações usando esse grupo.
+
+  int calculo = numerosGrupo['numero1']! * numerosGrupo['numero3']!;
+  // Aqui está usando o ! porque o Dart tem um lógica null safety, nese caso específico
+  //Ele tá pressuponto que o valor pode ser inteiro, mas também pode ser null caso você
+  // tenha digitado o nome da chave errada, por isso ele dará erro antes de compilar
+  //pra resovler isso você coloca um ! na frente do valor, isso diz ao dart que você
+  //tem certeza que a chave digitada está correta, lembre-se, se tiver errado o programa 
+  //vai crashar.
+
+  print(calculo); //valor será 500.
+
+  //no caso acima eu explicitei os tipos de valores que ficaram no map
+  //mas se você usar algo mais geral, não precisa explicitar, como var ou cost.
+
+
+  //Nesse caso o var vai identificar qual valor é qual e associar automaticamente
+  //o tipo correto na hora da compilação, mas isso abaixo é um map também.
+  var pontosLinhas = { 
+    'pontos' : Point(2,3),
+    'linhas' : Point(3,5)
+  };
+  //Mais sobre listas no arquivo class01a.dart
+
 }

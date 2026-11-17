@@ -28,7 +28,12 @@ Future<String> getWikipediaArticle(String articleTitle) async {
   // Se você marcar uma função como async, ela necessariamente vai ter que ser Future
   // ou Void caso ela retorne nada.
 
-  final url = Uri.https(
+
+
+  final url = Uri.https( //Uri é uma forma estruturada e segura de criar URL porque ele
+  // permite usar caracteres especiais que dariam erro se fosse usado uma string, além de
+  // que usando string, eu teria que ter trabalho concatenando elas, o Uri é bem mais prático.
+
     'en.wikipedia.org', // 1. O domínio principal
     '/api/rest_v1/page/summary/$articleTitle', // 2. O caminho específico do artigo
   );
